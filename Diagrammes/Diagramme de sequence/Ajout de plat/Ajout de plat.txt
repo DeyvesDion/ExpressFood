@@ -1,0 +1,44 @@
+@startuml
+actor Administrateur
+boundary System
+database Database
+
+Administrateur -> System : Demande de connexion
+System --> Administrateur : Affiche formulaire de connexion
+Administrateur -> System : Envoyer ses identifiants
+System -> Database : Récupère l'utilisateur
+
+alt successful case
+   Database -> System : Renvoie l'utilisateur
+   System-> System : Tester le mot de passe
+
+      alt successful case
+         System->System : Mettre l'utilisateur en session
+         System -> Administrateur : Rédirection vers la page utilisateur
+
+         alt Ajout plat
+             Administrateur -> System : Demande d'ajout de plat
+             System -> Administrateur : Afficher formulaire d'ajout
+             Administrateur -> System : Entrer information plat
+             System -> Database : Envoyer requête d'ajout
+
+             alt successsful case
+                 Database -> Database : Stockage
+                 Database -> System : Validation d'ajout
+                 System -> Administrateur : Ajout réalisé
+             else erreur requête
+                 Database -> System : Message d'erreur
+                 System -> Administrateur : Transmettre message d'erreur
+             end  
+
+         else Ajout de plat annulé
+              System -> Administrateur : Rédirection vers la page utilisateur
+         end
+
+      else Mot de passe erroné
+      System -> Administrateur : Message d'erreur
+      end
+else L'utilisateur est inexistant
+   System -> Administrateur : Message d'erreur  
+end
+@enduml

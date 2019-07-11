@@ -1,0 +1,28 @@
+body{
+    font-family: 'Raleway', sans-serif
+}
+.img{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin-left: 20px;
+}
+.banner h1{
+    font-size: 50px;
+    color: #000000;
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.telecharger{
+    font-size: 40px;
+}
+.card-body a{
+    text-decoration: none;
+}
+.card{
+    width: 90%;
+}
+.footer{
+    text-align: center;
+}

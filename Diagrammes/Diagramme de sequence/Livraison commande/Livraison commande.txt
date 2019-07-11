@@ -1,0 +1,27 @@
+@startuml
+actor Livreur
+control System
+database Database
+control Geolocalisation
+
+loop tant qu'aucun livreur n'a été sélectionné
+    System -> Database : Lister les livreurs avec du stock
+    Database -> System : Renvoi la liste des livreurs
+    loop pour chaque livreur
+        System -> Geolocalisation : Demande la position du livreur
+        Geolocalisation -> System : Renvoi la position du livreur
+    end
+    System -> System : Sélection du livreur le plus proche
+    System -> Database : Affecter le livreur à la commande
+    alt Commande affecté
+         Database -> System : Message de confirmation
+    end
+else
+    System -> Livreur : Notification : Nouvelle livraison
+end
+
+Livreur -> System : Commande livrée
+System -> Database : Demande de MAJ de l'état de la livraison
+Database -> Database : MAJ état livraison
+Database -> System : MAJ état livraison effectuée
+@enduml

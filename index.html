@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--CSS-->
+    <!--Fontawersome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Pacifico|Fredericka+the+Great|Raleway|Monoton" />
+    <!--Style-->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ExpressFood - Télécharger les fichiers du projet</title>
+    <link rel="shortcut icon" href="./img/icon.png">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="img">
+            <img src="./img/icon.png" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="banner">
+            <h1>ExpressFood</h1>
+        </div>
+        <div class="presentation">
+            <p>Base de données d'une start-up pour une application de restauration en ligne.<br>
+                La realisation de ce projet m'a permis d'acquérir les compétences suivantes:
+                <ul>
+                    <li>Réaliser des schémas UML cohérents et en accord avec les besoins du client</li>
+                    <li>Concevoir l’architecture technique d’une application à l’aide de diagrammes UML</li>
+                    <li>Implémenter le schéma de données dans la base</li>
+                    <li>Réaliser un schéma de conception de la base de données de l’application</li>
+                </ul>
+            </p>
+            <p class="telecharger">Télécharger les fichiers du projet</p>
+        </div>
+        <div class="download">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                <div class="titre">Modèle de données</div>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="casUtilisation">
+                                <p>Diagrammes de cas d'utilisation</p>
+
+                                <a href="./Diagrammes/Cas d utilisation/Ajout plat du jour.pdf">Ajout du plat du
+                                    jour</a><br>
+                                <a href="./Diagrammes/Cas d utilisation/Creation dune commande.pdf">Création d'une
+                                    commande</a><br>
+                                <a href="./Diagrammes/Cas d utilisation/Livraison commande.pdf">Livraison d'une
+                                    commande</a>
+                            </div>
+                            <div class="classe"><br>
+                                <p>Diagrammes de classe</p>
+                                <a href="./Diagrammes/Diagramme de classe/Diagramme de classe.pdf">Diagrammes de
+                                    classe</a>
+                            </div>
+                            <div class="sequence"><br>
+                                <p>Diagrammes de séquence</p>
+                                <a href="./Diagrammes/Diagramme de sequence/Ajout de plat/Ajout de plat.png">Ajout du
+                                    plat du jour</a><br>
+                                <a
+                                    href="./Diagrammes/Diagramme de sequence/Creation  commande/Creation dune commande.png">Création
+                                    d'une commande</a><br>
+                                <a href="./Diagrammes/Diagramme de sequence/Livraison commande/Livraison commande.png">Livraison
+                                    d'une commande</a><br>
+                            </div>
+                            <div class="modelDonnee"><br>
+                                <p>Modèle de données</p>
+                                <a href="./Diagrammes/Modeles de donnees/Modele de donnee.pdf">Modèle de données</a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <div class="titre">Base de données</div>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="table">
+                                <p>Création des tables de la base de données</p>
+                                <a href="./Database/Insert/insertion.sql">Création des tables</a><br>
+                            </div>
+                            <div class="insert">
+                                <p>Insertion des données dans la base de données</p>
+                                <a href="./Database/Table/table.sql">Insertion des données</a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <footer class="footer">&copy; Copyright 2019 - De Yves DION
+        <P>Site réalisé par De Yves DION dans le cadre du parcours Développeur d'applications Front-End
+            d'OpenClassrooms.
+        </P>
+    </footer>
+
+</body>
+
+</html>

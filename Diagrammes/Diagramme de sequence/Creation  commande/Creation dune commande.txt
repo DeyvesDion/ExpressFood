@@ -1,0 +1,45 @@
+@startuml
+actor Client
+control System
+database Database
+control Bank
+
+ref over Client, System, Database: Authentification
+
+loop Constituer le panier
+    Client -> System : Accéderà la page des plats
+    System -> Database : Requête pour récupérer les plats
+    Database -> System : La liste des plats    
+    System -> Client : Affiche les plats
+    Client -> System : Ajout d'un plat au panier
+    System -> System : Ajout du plat en session
+    System -> Client : Confirme l'ajout du plat
+end
+
+ref over Client, System, Database: Modification du panier
+
+Client -> System : Validation du panier
+System -> Client : Affiche le formulaire de livraison
+Client -> System : Valide le formulaire de livraison
+System -> System : Teste la validité du formulaire
+
+alt Formulaire valide
+    System -> Database : Création de la commande
+    alt Commande créée en base de données
+         Database -> System : Confirmation de création de la commande
+         loop Tant que le paiement n'est pas valide
+             System -> Bank : Création d'un paiement
+             Bank -> Client : Redirection vers la page de paiement
+             Client -> Bank : Procède au paiement
+             Bank -> Bank : Teste le paiement
+         end
+         Bank -> System : Paiement accépté
+         System -> Client : Message de confirmation
+    else Erreur à la création de la commande
+         Database -> System : Erreur d'insertion
+         System -> Client : Envoie d'un message d'erreur
+    end
+else Formulaire invalide
+    System -> Client : Envoie d'un message d'erreur
+end
+@enduml
